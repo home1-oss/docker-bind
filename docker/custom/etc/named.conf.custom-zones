@@ -1,0 +1,4 @@
+// /etc/bind/named.conf.custom-zones
+
+zone "internal" IN { type master; file "/etc/bind/zone.internal"; };
+zone "local" IN { type master; file "/etc/bind/zone.local"; };

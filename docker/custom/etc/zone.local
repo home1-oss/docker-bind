@@ -1,0 +1,31 @@
+$TTL 3H
+@	IN SOA	@ rname.invalid. (
+					0	; serial
+					1D	; refresh
+					1H	; retry
+					1W	; expire
+					3H )	; minimum
+	NS	@
+	A	127.0.0.1
+	AAAA	::1
+
+gitlab IN A 127.0.0.1
+nexus3 IN A 127.0.0.1
+postgresql IN A 127.0.0.1
+sonarqube IN A 127.0.0.1
+
+git IN A 127.0.0.1
+mirror.docker IN A 127.0.0.1
+mvnsite IN A 127.0.0.1
+nexus IN A 127.0.0.1
+registry.docker IN A 127.0.0.1
+sonar IN A 127.0.0.1
+
+cloudbus IN A 127.0.0.1
+mysql IN A 127.0.0.1
+
+eureka IN A 127.0.0.1
+eureka-peer1 IN A 127.0.0.1
+eureka-peer2 IN A 127.0.0.1
+eureka-peer3 IN A 127.0.0.1
+configserver IN A 127.0.0.1

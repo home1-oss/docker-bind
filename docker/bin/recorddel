@@ -1,0 +1,29 @@
+#!/usr/bin/env bash
+
+zone="$1"
+hostname="$2"
+type="$3"
+
+
+if [ -z "${zone}" ]; then printf 'no zone specified\n'; exit 1; fi
+if [ -z "${hostname}" ]; then printf 'no hostname specified\n'; exit 1; fi
+
+zone_file="/etc/bind/zone.${zone}"
+record="$2 $3 $4"
+echo "recordel zone:'${zone}', hostname:'${hostname}', type:'${type}'"
+
+echo "before 'recordel ${zone} ${hostname} ${type}'"
+if [ ! -f ${zone_file} ]; then touch ${zone_file}; chown bind:bind ${zone_file}; chmod 775 ${zone_file}; fi
+cat ${zone_file}
+
+if [ -z "${type}" ]; then
+    sed -i -E "/^${hostname} IN .+ .+\$/d" ${zone_file}
+else
+    sed -i -E "/^${hostname} IN ${type} .+\$/d" ${zone_file}
+fi
+
+echo "after 'recordel ${zone} ${hostname} ${type}'"
+cat ${zone_file}
+
+echo "reload config"
+rndc reload

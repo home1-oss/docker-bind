@@ -1,0 +1,29 @@
+
+version: '2.1'
+services:
+  bind:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: home1oss/bind:9.9.5
+    container_name: ${BIND_DOMAIN:-bind}.${INFRASTRUCTURE:-local}
+    environment:
+      FORWARDERS: ${FORWARDERS}
+      ROOT_PASSWORD: ${BIND_ROOT_PASSWORD:-root_pass}
+      WEBMIN_ENABLED: ${BIND_WEBMIN_ENABLED:-true}
+    hostname: ${BIND_DOMAIN:-bind}.${INFRASTRUCTURE:-local}
+    ports:
+    - "53:53/tcp"
+    - "53:53/udp"
+    - "10000:10000/tcp"
+    restart: unless-stopped
+    volumes:
+    - volume-bind-data:/data
+
+networks:
+  default:
+    external:
+      name: oss-network
+
+volumes:
+  volume-bind-data: {}
