@@ -30,10 +30,10 @@ options {
 	/* listen-on port 53 { 127.0.0.1; }; */
 
 	/* allow-query   { localhost; }; */
-	/* allow-query   { any; }; */
+	allow-query   { any; };
 
 	/* dnssec-enable yes; */
-	/* dnssec-enable no; */
+	dnssec-enable no;
 	/* dnssec-validation yes; */
-	/* dnssec-validation no; */
+	dnssec-validation no;
 };
