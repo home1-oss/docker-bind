@@ -12,6 +12,9 @@ else
     sed -i -E "s#/\* forwarders \{ .* \}\; \*/#forwarders { ${forwarders}; };#" /data/bind/etc/named.conf.options
 fi
 
+echo "/data/bind/etc/named.conf.options"
+cat /data/bind/etc/named.conf.options
+
 if [ "${reload}" == "true" ]; then
     echo "reload config"
     rndc reload
