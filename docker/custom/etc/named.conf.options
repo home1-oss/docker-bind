@@ -35,5 +35,5 @@ options {
 	/* dnssec-enable yes; */
 	dnssec-enable no;
 	/* dnssec-validation yes; */
-	dnssec-validation no;
+	/* dnssec-validation no; */
 };
