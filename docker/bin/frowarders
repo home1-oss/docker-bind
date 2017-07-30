@@ -4,6 +4,8 @@ forwarders="$1"
 reload="$2"
 if [ -z "${reload}" ]; then reload="true"; fi
 
+echo "forwarders: '${forwarders}', reload: '${reload}'"
+
 if [ -z "${forwarders}" ]; then
     sed -i -E "s#/\* forwarders \{ .* \}\; \*/#/* forwarders { <host>; }; */#" /data/bind/etc/named.conf.options
 else
