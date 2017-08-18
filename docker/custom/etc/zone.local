@@ -24,8 +24,11 @@ sonar IN A 127.0.0.1
 cloudbus IN A 127.0.0.1
 mysql IN A 127.0.0.1
 
-eureka IN A 127.0.0.1
-eureka-peer1 IN A 127.0.0.1
-eureka-peer2 IN A 127.0.0.1
-eureka-peer3 IN A 127.0.0.1
-configserver IN A 127.0.0.1
+oss-admin IN A 127.0.0.1
+oss-configserver IN A 127.0.0.1
+oss-eureka IN A 127.0.0.1
+oss-eureka-peer1 IN A 127.0.0.1
+oss-eureka-peer2 IN A 127.0.0.1
+oss-eureka-peer3 IN A 127.0.0.1
+oss-hystrixboard IN A 127.0.0.1
+oss-turbine IN A 127.0.0.1
